@@ -10,7 +10,11 @@ public class SpringAOPDemo {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         HeavyCrunching heavyCrunching = (HeavyCrunching) context.getBean("heavyCrunching");
+
+        //Pointcut with method name
         heavyCrunching.doSomeProcessing();
+
+        //Pointcut with method annotated
         heavyCrunching.doProcessingAnnotatedMethod();
         context.close();
     }
