@@ -1,10 +1,10 @@
-package com.alpha.excercise.aop;
+package com.alpha.excercise.aop.spring;
 
-import com.alpha.excercise.aop.configuration.AppConfig;
+import com.alpha.excercise.process.HeavyCrunching;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
-public class SpringAOPDemo {
+public class SpringAnnotationConfigAOPDemo {
 
     public static void main(String args[]){
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -12,7 +12,7 @@ public class SpringAOPDemo {
         HeavyCrunching heavyCrunching = (HeavyCrunching) context.getBean("heavyCrunching");
 
         //Pointcut with method name
-        heavyCrunching.doSomeProcessing();
+//        heavyCrunching.doSomeProcessing();
 
         //Pointcut with method annotated
         heavyCrunching.doProcessingAnnotatedMethod();

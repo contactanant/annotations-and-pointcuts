@@ -5,10 +5,10 @@ import com.alpha.excercise.annotations.ClassPreamble;
 import java.lang.reflect.Field;
 
 @ClassPreamble (author = "Anant", date="3/17/2002", reviewers = {"Alice", "Bob", "Cindy"})
-public class MyAnnotatedClass {
+public class MyAnnotatedClassMain {
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException {
-        Class c = Class.forName("com.alpha.excercise.reflextion.MyAnnotatedClass");
+        Class c = Class.forName("com.alpha.excercise.reflextion.MyAnnotatedClassMain");
         ClassPreamble annotation = (ClassPreamble) c.getAnnotation(ClassPreamble.class);
         System.out.println(annotation.author());
 

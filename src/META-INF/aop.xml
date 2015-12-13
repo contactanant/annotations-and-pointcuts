@@ -1,6 +1,6 @@
 <aspectj>
     <aspects>
-        <aspect name="com.alpha.excercise.aop.ProfileMethodAspect" />
+        <aspect name="com.alpha.excercise.aop.aspectj.ProfileMethodAspect" />
     </aspects>
 
     <weaver options="-verbose -debug -showWeaveInfo">

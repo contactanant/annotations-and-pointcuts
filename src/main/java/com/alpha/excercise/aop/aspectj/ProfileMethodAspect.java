@@ -1,4 +1,4 @@
-package com.alpha.excercise.aop;
+package com.alpha.excercise.aop.aspectj;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -16,7 +16,7 @@ public class ProfileMethodAspect {
     public void businessMethods() { }
 
     // Point cuts can be on particular package, any class , any public method and annotated with timed
-    @Pointcut("execution(* com.alpha.excercise.aop.*.*(..)) && @annotation(Timed)")
+    @Pointcut("execution(* com.alpha.excercise.*.*.*(..)) && @annotation(com.alpha.excercise.annotations.Timed)")
     public void annotatedBusinessMethods() { }
 
     @Around("businessMethods()")
@@ -32,7 +32,7 @@ public class ProfileMethodAspect {
 
     private Object runMethodAndLogTime(ProceedingJoinPoint pjp) throws Throwable {
         long start = System.currentTimeMillis();
-        System.out.println("Going to call the method.");
+        System.out.println("AspectJ aspect, going to call the method.");
         Object output = pjp.proceed();
         System.out.println("Method execution completed.");
         long elapsedTime = System.currentTimeMillis() - start;
